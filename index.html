@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>幽影櫻 - 個人介紹</title>
+  <style>
+/* 保留背景圖片設定 */
+body {
+  margin: 0;
+  font-family: "Microsoft JhengHei", sans-serif;
+  background-image: url('http://barian.moe/462574261_560443646700220_2712531227742454466_n.jpg');
+  background-size: cover;
+  background-position: top center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  color: #fff;
+  position: relative; /* 用來放置 overlay */
+  min-height: 100vh;
+}
+
+/* 深色遮罩 */
+body::before {
+  content: '';
+  position: fixed;      /* 固定在整個視窗 */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* 黑色 50% 透明度，可調整 */
+  z-index: 0;           /* 放在最底層，不遮擋內容 */
+  pointer-events: none; /* 不阻擋滑鼠事件 */
+}
+
+/* 內容需要在 overlay 上方顯示 */
+main, header, .container, .content {
+  position: relative;
+  z-index: 1;
+}
+
+
+
+      header {
+        display: flex;
+        justify-content: flex-end;
+        padding: 20px 40px;
+        background-color: rgba(11, 15, 23, 0.7); /* 半透明深色 */
+        backdrop-filter: blur(5px); /* 可選：加上毛玻璃模糊效果更酷 */
+      }
+
+    header a {
+      margin-left: 20px;
+      color: #fff;
+      text-decoration: none;
+      transition: 0.3s;
+    }
+    header a:hover { color: #00bfff; }
+
+    .container {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 60px 20px;
+    }
+
+    .profile-img {
+      width: 280px;
+      max-width: 100%;
+      height: auto;
+      border-radius: 15px;
+      box-shadow: 0 0 20px rgba(0,0,0,0.5);
+      margin-right: 40px;
+    }
+
+    .info { max-width: 600px; }
+    .info h1 { font-size: 40px; margin: 0 0 15px; }
+    .info p { font-size: 16px; line-height: 1.8; color: #ccc; }
+
+    .socials { margin: 20px 0; }
+    .socials a {
+      display: inline-block;
+      margin-right: 15px;
+      font-size: 24px;
+      color: #ccc;
+      transition: 0.3s;
+    }
+    .socials a:hover { color: #00bfff; }
+
+    .links { margin-top: 25px; }
+    .links a {
+      display: inline-block;
+      margin: 8px 10px 0 0;
+      padding: 12px 20px;
+      background-color: #1a2233;
+      border-radius: 8px;
+      color: #fff;
+      text-decoration: none;
+      font-size: 14px;
+      transition: 0.3s;
+        /* 可選：微弱光暈在背景方塊上，但不改變原背景色 */
+      box-shadow: 0 0 8px rgba(0, 191, 255, 0.3),
+                  0 0 15px rgba(255, 0, 255, 0.2);
+    }
+    .links a:hover { background-color: #00bfff; }
+
+    @media (max-width: 768px) {
+      .container { flex-direction: column; text-align: center; }
+      .profile-img { margin-right: 0; margin-bottom: 20px; }
+    }
+    /* 定義電子遊戲風格霓虹陰影 class */
+    .neon-shadow {
+      /* 元素方塊陰影 */
+      box-shadow: 0 0 10px rgba(0, 191, 255, 0.5),
+                  0 0 20px rgba(255, 0, 255, 0.3);
+
+      /* 文字陰影 */
+      text-shadow: 0 0 5px #00bfff,
+                   0 0 10px #ff00ff;
+    }
+
+    .neon-text {
+      text-shadow: 0 0 5px #00bfff,
+                   0 0 10px #ff00ff,
+                   0 0 15px #00ffff;
+    }
+
+        /* 霓虹電子風文字 */
+    .neon-p {
+      font-size: 16px;
+      line-height: 1.8;
+      color: #a020f0; /* 深紫色文字 */
+      text-shadow:
+        0 0 5px #a020f0,
+        0 0 10px #a020f0,
+        0 0 20px #a020f0,
+        0 0 40px #a020f0,
+        0 0 80px #a020f0;
+    }
+
+
+
+
+
+  </style>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+  <header class="neon-shadow">
+    <a href="index.html">首頁</a>
+    <a href="about.html">關於</a>
+  </header>
+
+  <main data-barba="wrapper">
+    <div data-barba="container" data-barba-namespace="home">
+      <div class="container">
+        <img src="avatar.jpg" alt="頭像" class="profile-img">
+        <div class="info">
+          <h1 class="neon-text">幽影櫻</h1>
+          <p class="neon-p">
+            喜歡打遊戲，玩玩 Apex。<br>
+            最近大部分時間都在 Minecraft，<br>
+            並有架設 Minecraft 1.20.1 Forge 伺服器。
+          </p>
+
+
+          <div class="socials">
+            <a href="#"><i class="fab fa-telegram"></i></a>
+            <a href="https://www.facebook.com/barian0517/"><i class="fab fa-facebook"></i></a>
+            <a href="https://github.com/Barian0517"><i class="fab fa-github"></i></a>
+          </div>
+
+          <hr style="border: 0; border-top: 1px solid #333; margin: 20px 0;">
+
+          <p class="neon-text">主要連結：</p>
+          <div class="links">
+            <a href="http://barian.moe/" class="neon-text">自我介紹</a>
+            <a href="https://www.youtube.com/@barian0517" class="neon-text">我的YT</a>
+            <a href=https://mcweb.barian.moe/youer/ class="neon-text">MC伺服器官網</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Barba.js + GSAP -->
+  <script src="https://unpkg.com/@barba/core"></script>
+  <script src="https://unpkg.com/gsap@3"></script>
+<script>
+barba.init({
+  transitions: [{
+    name: 'fade-up',
+    leave(data) {
+      // 舊頁面淡出向上
+      return gsap.to(data.current.container, {
+        y: -30,
+        opacity: 0,
+        duration: 0.5,
+        ease: "power2.inOut"
+      });
+    },
+    enter(data) {
+      // 先將下一個 container 初始偏移到下方
+      gsap.set(data.next.container, { y: 30, opacity: 0 });
+      return gsap.to(data.next.container, {
+        y: 0,
+        opacity: 1,
+        duration: 0.8,
+        ease: "power3.out"
+      });
+    }
+
+  }]
+});
+</script>
+
+
+  <style>
+  .trail {
+    position: fixed;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    pointer-events: none;
+    background: linear-gradient(45deg, #00bfff, #ff00ff);
+    box-shadow: 0 0 10px #00bfff, 0 0 20px #ff00ff, 0 0 30px #00bfff;
+    opacity: 0.8;
+    z-index: 9999;
+    mix-blend-mode: screen;
+  }
+
+  .click-particle {
+    position: fixed;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    pointer-events: none;
+    background: linear-gradient(45deg, #00ffea, #ff00ff);
+    box-shadow: 0 0 5px #00ffea, 0 0 10px #ff00ff;
+    z-index: 9999;
+    mix-blend-mode: screen;
+    opacity: 1;
+  }
+  </style>
+
+  <script>
+    const trails = [];
+    const trailCount = 15;
+
+    for (let i = 0; i < trailCount; i++) {
+      const div = document.createElement('div');
+      div.classList.add('trail');
+      document.body.appendChild(div);
+      trails.push({ el: div, x: window.innerWidth / 2, y: window.innerHeight / 2, scale: 1 });
+    }
+
+    const mouse = { x: window.innerWidth / 2, y: window.innerHeight / 2 };
+
+    window.addEventListener('mousemove', e => {
+      mouse.x = e.clientX;
+      mouse.y = e.clientY;
+    });
+
+    function animateTrail() {
+      let x = mouse.x;
+      let y = mouse.y;
+
+      trails.forEach((trail, i) => {
+        // 緩動跟隨滑鼠
+        trail.x += (x - trail.x) * 0.3;
+        trail.y += (y - trail.y) * 0.3;
+
+        // 放大縮小動態效果
+        trail.scale = 0.5 + Math.sin(Date.now() * 0.005 + i) * 0.5;
+
+        // 設定位置，這裡直接用 top/left + transform scale，避免偏移
+        trail.el.style.left = `${trail.x}px`;
+        trail.el.style.top = `${trail.y}px`;
+        trail.el.style.transform = `translate(-50%, -50%) scale(${trail.scale})`;
+
+        // 下一個拖尾跟前一個拖尾
+        x = trail.x;
+        y = trail.y;
+      });
+
+      requestAnimationFrame(animateTrail);
+    }
+
+    animateTrail();
+
+
+
+  // --- 點擊擴散效果 ---
+  function createClickParticles(x, y) {
+    const count = 12; // 擴散粒子數量
+    for (let i = 0; i < count; i++) {
+      const p = document.createElement('div');
+      p.classList.add('click-particle');
+      document.body.appendChild(p);
+
+      const angle = Math.random() * 2 * Math.PI;
+      const speed = 2 + Math.random() * 3; // 飛散速度
+      const vx = Math.cos(angle) * speed;
+      const vy = Math.sin(angle) * speed;
+
+      let opacity = 1;
+      let posX = x;
+      let posY = y;
+
+      const animate = () => {
+        posX += vx;
+        posY += vy;
+        opacity -= 0.02;
+
+        p.style.left = `${posX}px`;
+        p.style.top = `${posY}px`;
+        p.style.opacity = opacity;
+
+        if (opacity > 0) requestAnimationFrame(animate);
+        else p.remove();
+      };
+
+      animate();
+    }
+  }
+
+  window.addEventListener('mousedown', e => {
+    createClickParticles(e.clientX, e.clientY);
+  });
+  </script>
+
+<script>
+window.addEventListener('DOMContentLoaded', () => {
+  // header 從下方滑入
+  gsap.from("header", {
+    y: 50,
+    opacity: 0,
+    duration: 1,
+    ease: "power3.out"
+  });
+
+  // container 主體元素從下方滑入
+  gsap.from(".container", {
+    y: 50,
+    opacity: 0,
+    duration: 1,
+    ease: "power3.out",
+    delay: 0.2
+  });
+
+  // 標題與段落文字逐一滑入
+
+
+  // 主要連結按鈕逐一滑入
+  gsap.from(".links", {
+    y: 30,
+    opacity: 0,
+    duration: 0.8,
+    ease: "power3.out",
+    stagger: 0.1,
+    delay: 0.6
+  });
+});
+</script>
+
+<script>
+// 阻止相同頁面的 a 標籤跳轉
+document.querySelectorAll('header a').forEach(a => {
+  a.addEventListener('click', function(e) {
+    const href = a.getAttribute('href');
+    const current = location.pathname.split('/').pop(); // 取得當前檔名
+    if (href === current || (href === '' && current === 'index.html')) {
+      e.preventDefault(); // 阻止跳轉
+    }
+  });
+});
+</script>
+
+
+
+
+</body>
+</html>
