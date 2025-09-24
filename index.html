@@ -377,6 +377,69 @@ document.querySelectorAll('header a').forEach(a => {
 
 
 
+  <!-- 分數介面：一開始隱藏 -->
+  <p id="scoreBoard" class="neon-text"
+     style="display:none;
+            position:fixed;
+            left:10px;
+            top:50%;
+            transform:translateY(-50%);
+            font-size:20px;
+            font-weight:bold;
+            color:#00ffcc;">
+    分數：0
+  </p>
+  <script>
+    const scoreBoard = document.getElementById('scoreBoard');
+    let score = 0;
+    let clickCount = 0;
+
+    function spawnBox() {
+      const box = document.createElement('div');
+      box.classList.add('game-box');
+      box.style.position = 'fixed';
+      box.style.width = '30px';
+      box.style.height = '30px';
+      box.style.borderRadius = '8px';
+      box.style.background = 'linear-gradient(45deg, #00bfff, #ff00ff)';
+      box.style.cursor = 'pointer';
+      box.style.zIndex = '9999';
+      box.style.boxShadow = '0 0 15px #00bfff, 0 0 25px #ff00ff';
+
+      // 隨機位置 (避免超出螢幕)
+      const maxX = window.innerWidth - 70;
+      const maxY = window.innerHeight - 70;
+      box.style.left = Math.random() * maxX + 'px';
+      box.style.top = Math.random() * maxY + 'px';
+
+      document.body.appendChild(box);
+
+      box.onclick = () => {
+        clickCount++;
+
+        if (clickCount >= 3 && scoreBoard.style.display === "none") {
+          // 第三次點擊時觸發彩蛋，顯示分數
+          scoreBoard.style.display = "block";
+          score=3;
+          scoreBoard.textContent = "分數：" + score;
+        } else if (scoreBoard.style.display === "block") {
+          // 彩蛋解鎖後才計分
+          score++;
+          scoreBoard.textContent = "分數：" + score;
+        }
+
+        box.remove();
+        spawnBox(); // 永遠繼續生成下一個
+      };
+    }
+
+    // 頁面載入後直接開始
+    window.addEventListener('DOMContentLoaded', () => {
+      spawnBox();
+    });
+  </script>
+
+
 
 </body>
 </html>
